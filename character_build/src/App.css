@@ -2,9 +2,14 @@
   text-align: center;
 }
 
+html {
+  height: 100%;
+}
+
 body {
-  background: #4f5f76;
+  background: radial-gradient(#4f5f76, #091f36);
   color: white;
+  min-height: 100%;
 }
 
 .links {
