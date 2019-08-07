@@ -3,10 +3,10 @@ const characters = [
         name: 'Aelien',
         class: 'Wizard',
         content: [
-            'atk:8',
-            'def:10',
-            'mgc:17',
-            'hp:20'
+            'ATK: 8',
+            'DEF: 10',
+            'MGC: 17',
+            'HP: 20'
         ]
     },
     {
