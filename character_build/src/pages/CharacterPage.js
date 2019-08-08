@@ -11,6 +11,12 @@ const CharacterPage = ( {match} ) => {
     const [characterInfo, setCharacterInfo] = useState({ hits: 0, comments: [] });
 
     useEffect(() => {
+        const fetchData = async () => {
+            const result = await fetch(`http://localhost:8000/api/articles/${name}`);
+            const body = await result.json();
+            setCharacterInfo(body);
+        }
+        fetchData();
         setCharacterInfo ({ 
             hits: Math.ceil(Math.random()*10)
         }, [name]);
