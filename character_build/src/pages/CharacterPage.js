@@ -12,15 +12,14 @@ const CharacterPage = ( {match} ) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await fetch(`http://localhost:8000/api/articles/${name}`);
+            const result = await fetch(`/api/characters/${name}`);
             const body = await result.json();
             setCharacterInfo(body);
         }
         fetchData();
         setCharacterInfo ({ 
             hits: Math.ceil(Math.random()*10)
-        }, [name]);
-    })
+        });}, [name]);
 
     if (!character) return <NotFoundPage />
 
