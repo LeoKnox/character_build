@@ -14,12 +14,11 @@ const CharacterPage = ( {match} ) => {
         const fetchData = async () => {
             const result = await fetch(`/api/characters/${name}`);
             const body = await result.json();
+            console.log(body);
             setCharacterInfo(body);
         }
         fetchData();
-        setCharacterInfo ({ 
-            hits: Math.ceil(Math.random()*10)
-        });}, [name]);
+        }, [name]);
 
     if (!character) return <NotFoundPage />
 
