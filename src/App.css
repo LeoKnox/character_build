@@ -32,6 +32,13 @@ body {
   border-radius: 5px;
 }
 
+.actionButton {
+  padding: 10px 20px;
+  background-color: #4f5f76;
+  border-radius: 50%;
+  color: red;
+}
+
 li {
   display: inline;
   margin: 0 15px;
