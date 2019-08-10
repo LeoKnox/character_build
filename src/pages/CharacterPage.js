@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import characterContent from './character-content';
 import CharacterList from '../components/CharacterList';
+import ActionsList from '../components/ActionsList';
 import NotFoundPage from './NotFoundPage';
+import characters from './character-content';
 
 const CharacterPage = ( {match} ) => {
     const name = match.params.name;
@@ -30,6 +32,7 @@ const CharacterPage = ( {match} ) => {
             {character.content.map((stat, key) => (
                 <p key={key}>{stat}</p>
             ))}
+            <ActionsList charActions={characters.charAction} />
             <CharacterList characters={otherCharacters} />
         </>
     );
