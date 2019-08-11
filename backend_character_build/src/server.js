@@ -28,17 +28,17 @@ app.get('/api/characters/:name', async (req, res) => {
     }, res);
 })
 
-app.post('/api/characters/:name/damage', async (req, res) => {
+app.post('/api/characters/:name/hits', async (req, res) => {
     withDB(async (db) => {
         const characterName = req.params.name;
 
         const characterInfo = await db.collection('characters').findOne({ name: characterName });
         await db.collection('characters').updateOne({ name: characterName }, {
             '$set': {
-                damage: characterInfo.damage +1,
+                hits: characterInfo.hits +1,
                 },
             });
-        const updatedCharacterInfo = await db.collections('characters').findOne({ name:characterName });
+        const updatedCharacterInfo = await db.collection('characters').findOne({ name:characterName });
 
         res.status(200).json(updatedCharacterInfo);
     }, res);
@@ -49,14 +49,14 @@ app.post('/api/characters/:name/charAction', (req, res) => {
     const characterName = req.params.name;
 
     withDB(async (db) => {
+        console.log('hello');
         const characterInfo = await db.collection('characters').findOne({ name:characterName });
         await db.collection('characters').updateOne({ name:characterName }, {
             '$set': {
-                damage: characterInfo.damage.concat({ username, action }),
+                charAction: characterInfo.charAction.concat({ username, action }),
             },
         });
         const updatedCharacterInfo = await db.collection('characters').findOne({ name: characterName });
-
         res.status(200).json(updatedCharacterInfo);
     }, res);
 });
