@@ -45,7 +45,7 @@ app.post('/api/characters/:name/hits', async (req, res) => {
 });
 
 app.post('/api/characters/:name/charAction', (req, res) => {
-    const {username, action } = req.body;
+    const {username, text } = req.body;
     const characterName = req.params.name;
 
     withDB(async (db) => {
@@ -53,7 +53,7 @@ app.post('/api/characters/:name/charAction', (req, res) => {
         const characterInfo = await db.collection('characters').findOne({ name:characterName });
         await db.collection('characters').updateOne({ name:characterName }, {
             '$set': {
-                charAction: characterInfo.charAction.concat({ username, action }),
+                charAction: characterInfo.charAction.concat({ username, text }),
             },
         });
         const updatedCharacterInfo = await db.collection('characters').findOne({ name: characterName });
