@@ -10,7 +10,7 @@ const ToHitSection = ({characterName, hits, setCharacterInfo}) => {
     }
     return (
         <div>
-            <button onClick={() => attack()} className="actionButton">Hit</button>
+            <button onClick={() => attack()} className="hitButton">Hit</button>
             <p>{characterName} has been hit {hits} times.</p>
         </div>
     );

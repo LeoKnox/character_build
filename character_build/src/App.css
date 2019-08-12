@@ -40,10 +40,10 @@ body {
   border-radius: 25px;
 }
 
-.actionButton {
+.hitButton {
   padding: 10px 20px;
-  background-color: #4f5f76;
   border-radius: 50%;
+  background-color: #4f5f76;
   color: red;
 }
 
@@ -55,6 +55,29 @@ li {
 a {
   text-decoration: none;
   color: #4f5f76;
+  font-weight: bold;
+}
+
+#charName {
+  padding: 10px;
+  vertical-align: top;
+}
+
+.actionButton {
+  padding: 30px;
+  border-radius: 50%;
+  vertical-align: top;
+  background-color: #4f5f76;
+  color: red;
+}
+
+#charAction {
+  padding: 10px;
+  display: inline-block;
+}
+
+.actionTitle {
+  padding: 10px;
   font-weight: bold;
 }
 
