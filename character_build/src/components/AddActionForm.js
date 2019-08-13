@@ -28,7 +28,7 @@ const AddActionForm = ({ characterName, setCharacterInfo }) => {
             <input 
                 type="text" value={username} 
                 onChange={(event) => setCharacterName(event.target.value)}
-            />
+            /><br/>
         </label>
         <label id="charAction">
             <label className="actionTitle">Action:</label>
